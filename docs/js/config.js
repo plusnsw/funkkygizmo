@@ -1,0 +1,4 @@
+window.SITE_CONFIG = {
+  googleFormUrl: 'https://docs.google.com/forms/d/e/REPLACE_WITH_YOUR_FORM_ID/viewform',
+  googleFormEmbedUrl: 'https://docs.google.com/forms/d/e/REPLACE_WITH_YOUR_FORM_ID/viewform?embedded=true'
+};
