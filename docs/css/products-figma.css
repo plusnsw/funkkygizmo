@@ -240,7 +240,18 @@
     flex: 1 1 auto;
     min-height: 0;
     background: var(--fg-gray-bg, #f2f2f2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.products-figma-modal-content {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
 }
 
 .products-figma-modal-content[hidden] {
