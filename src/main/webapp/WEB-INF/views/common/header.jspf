@@ -1,0 +1,49 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="brandNav" value="${true}"/>
+<!DOCTYPE html>
+<html lang="ko"<c:if test="${brandNav}"> class="page-brand"</c:if>>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>${pageTitle} | FUNKKY GIZMO</title>
+    <link rel="icon" href="${ctx}/images/logo_a.png" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="${ctx}/css/style.css?v=20260528"/>
+    <c:if test="${brandNav}">
+        <link rel="stylesheet" href="${ctx}/css/home.css?v=20260528"/>
+    </c:if>
+    <c:if test="${not empty extraCss and extraCss ne 'home.css'}">
+        <link rel="stylesheet" href="${ctx}/css/${extraCss}?v=20260528"/>
+    </c:if>
+</head>
+<body data-page="${pageId}" data-context-path="${ctx}"<c:if test="${brandNav}"> class="page-brand page-${pageId}"</c:if>>
+<header class="site-header ${brandNav ? 'site-header--brand' : ''}">
+    <div class="container header-inner">
+        <a class="logo" href="${ctx}/">
+            <c:set var="logoFile" value="logo_b.png"/>
+            <c:set var="logoClass" value="brand-logo-img--header"/>
+            <%@ include file="brand-logo.jspf" %>
+        </a>
+        <nav class="main-nav" id="mainNav">
+            <a href="${ctx}/about" data-nav="about">About</a>
+            <a href="${ctx}/products" data-nav="products">Objects</a>
+            <a href="${ctx}/team" data-nav="team">Team</a>
+            <a href="${ctx}/contact" data-nav="contact">Contact</a>
+        </nav>
+        <c:if test="${brandNav}">
+            <a class="nav-brand-badge" href="${ctx}/" aria-label="FUNKKY GIZMO">
+                <c:set var="logoFile" value="logo_a.png"/>
+                <c:set var="logoClass" value="brand-logo-img--nav"/>
+                <%@ include file="brand-logo.jspf" %>
+            </a>
+        </c:if>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+<main class="main-brand main-${pageId}">

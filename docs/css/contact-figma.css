@@ -1,0 +1,175 @@
+/* Contact page — FG contact */
+
+.contact-figma-main {
+    background: #fff;
+    padding: 2rem 1.5rem 4rem;
+}
+
+.contact-figma-panel {
+    max-width: var(--fg-container, 1320px);
+    margin: 0 auto;
+    background: var(--fg-gray-bg, #f2f2f2);
+    border-radius: 23px;
+    padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 3.5vw, 3rem);
+}
+
+.contact-figma-panel-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: stretch;
+}
+
+.contact-figma-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-height: 100%;
+}
+
+.contact-figma-intro .about-figma-visual {
+    margin-top: auto;
+    margin-left: 0;
+    margin-right: auto;
+    width: 100%;
+}
+
+.contact-figma-title {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.5rem, 5.3vw, 4.375rem);
+    font-weight: 900;
+    line-height: 0.94;
+    color: var(--fg-blue, #0706a0);
+    text-transform: uppercase;
+}
+
+.contact-figma-lead {
+    margin: 0;
+    max-width: 28rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--fg-black, #272727);
+}
+
+.contact-figma-lead-line {
+    display: block;
+}
+
+.contact-figma-form-card {
+    background: #fff;
+    border-radius: 23px;
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.contact-figma-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.contact-figma-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.contact-figma-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-figma-field--full {
+    grid-column: 1 / -1;
+}
+
+.contact-figma-field label {
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--fg-blue, #0706a0);
+}
+
+.contact-figma-field label .required {
+    color: var(--fg-blue, #0706a0);
+}
+
+.contact-figma-field input,
+.contact-figma-field textarea {
+    width: 100%;
+    border: 1px solid var(--fg-blue, #0706a0);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    color: var(--fg-black, #272727);
+    background: #fff;
+    transition: box-shadow 0.15s ease;
+}
+
+.contact-figma-field input::placeholder,
+.contact-figma-field textarea::placeholder {
+    color: #b0b0b0;
+}
+
+.contact-figma-field input:focus,
+.contact-figma-field textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(7, 6, 160, 0.15);
+}
+
+.contact-figma-field textarea {
+    min-height: 9.5rem;
+    resize: vertical;
+}
+
+.contact-figma-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    background: var(--fg-blue, #0706a0);
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+}
+
+.contact-figma-submit:hover {
+    opacity: 0.9;
+}
+
+.contact-figma-form-note {
+    margin: 0.75rem 0 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #9a9a9a;
+    text-align: center;
+}
+
+.contact-figma-form-note a {
+    color: var(--fg-blue, #0706a0);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+@media (max-width: 960px) {
+    .contact-figma-panel-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-figma-form-row {
+        grid-template-columns: 1fr;
+    }
+}

@@ -955,6 +955,136 @@ a {
     color: var(--color-muted);
 }
 
+/* Figma footer — common */
+.figma-footer.site-footer {
+    margin-top: auto;
+    padding: 2.25rem 1.5rem;
+    background: #fbd312;
+    border-top: none;
+    min-height: 154px;
+}
+
+.figma-footer-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.figma-footer-start {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    min-width: 0;
+}
+
+.figma-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-shrink: 0;
+}
+
+.figma-footer-logo img {
+    display: block;
+    height: clamp(56px, 8vw, 82px);
+    width: auto;
+}
+
+.figma-footer-tagline {
+    margin: 0;
+    font-family: 'Helvetica Neue', 'Noto Sans KR', sans-serif;
+    font-size: clamp(0.8125rem, 1.2vw, 1rem);
+    font-weight: 400;
+    line-height: 1.25;
+    color: #272727;
+}
+
+.figma-footer-tagline-line {
+    display: block;
+    white-space: nowrap;
+}
+
+.figma-footer-divider {
+    flex: 0 0 1px;
+    align-self: stretch;
+    width: 1px;
+    min-height: 96px;
+    background: #272727;
+}
+
+.figma-footer-nav {
+    display: flex;
+    gap: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.figma-footer-nav-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.figma-footer-nav a {
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #272727;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.figma-footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.figma-footer-copy {
+    margin: 0;
+    flex: 0 0 auto;
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #272727;
+    text-align: right;
+}
+
+@media (max-width: 1024px) {
+    .figma-footer-inner {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .figma-footer-copy {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .figma-footer.site-footer {
+        padding: 2rem 1rem;
+    }
+
+    .figma-footer-start {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .figma-footer-divider {
+        display: none;
+    }
+
+    .figma-footer-brand {
+        width: 100%;
+    }
+
+    .figma-footer-tagline-line {
+        white-space: normal;
+    }
+}
+
 /* Toast */
 .toast {
     position: fixed;

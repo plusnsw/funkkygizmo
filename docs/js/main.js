@@ -16,6 +16,7 @@
 
     initMobileNav();
     initActiveNav();
+    initProductsSmileyLayout();
 
     function initMobileNav() {
         var navToggle = document.getElementById('navToggle');
@@ -27,11 +28,23 @@
         });
     }
 
+    function isHomeEntry(path) {
+        if (!path || path === '/') return true;
+        if (/\/funkkygizmo\/?$/.test(path)) return true;
+        if (path === '/index.html' || path.endsWith('/index.html')) {
+            var base = path.replace(/\/index\.html$/, '') || '/';
+            var segments = base.split('/').filter(Boolean);
+            return segments.length === 0 || (segments.length === 1 && segments[0] === 'funkkygizmo');
+        }
+        return false;
+    }
+
     function initActiveNav() {
         var path = window.location.pathname;
         var pageId = document.body.getAttribute('data-page') || '';
 
         document.querySelectorAll('[data-nav]').forEach(function (link) {
+            link.classList.remove('active');
             var nav = link.getAttribute('data-nav');
             var isActive = false;
 
@@ -39,15 +52,19 @@
                 isActive = true;
             } else if (nav === 'services' && (path === '/' || path.indexOf('#services') >= 0)) {
                 isActive = path === '/' || window.location.hash === '#services';
-            } else if (nav === 'products' && path.indexOf('/products') >= 0) {
+            } else if (nav === 'products' && (path.indexOf('/products') >= 0 || pageId === 'products' || pageId === 'product-detail')) {
                 isActive = true;
-            } else if (nav === 'about' && path.indexOf('/about') >= 0) {
+            } else if (nav === 'about' && (pageId === 'about' || path.indexOf('/about') >= 0 || isHomeEntry(path))) {
                 isActive = true;
             } else if (nav === 'team' && path.indexOf('/team') >= 0) {
                 isActive = true;
             } else if (nav === 'contact' && path.indexOf('/contact') >= 0) {
                 isActive = true;
-            } else if (pageId === nav || (pageId === 'product-detail' && nav === 'products')) {
+            } else if (nav === 'journey' && path.indexOf('/contact') >= 0) {
+                isActive = true;
+            } else if (nav === 'product' && (path.indexOf('/products') >= 0 || pageId === 'products' || pageId === 'product-detail')) {
+                isActive = true;
+            } else if (pageId === nav) {
                 isActive = true;
             }
 
@@ -55,6 +72,62 @@
                 link.classList.add('active');
             }
         });
+    }
+
+    function initProductsSmileyLayout() {
+        var block = document.querySelector('.about-figma-products-lead-block');
+        var anchor = document.querySelector('.about-figma-products-anchor');
+        var img = document.querySelector('.about-figma-product-img--1');
+        var line1 = document.querySelector('.about-figma-products-lead-line:first-child');
+        var line2 = document.querySelector('.about-figma-products-lead-line--2');
+        if (!block || !anchor || !img || !line1 || !line2) return;
+
+        var PNG_LEFT_INSET = 0.16;
+        var ANCHOR_OVERLAP = 0.33;
+
+        function positionSmiley() {
+            var blockRect = block.getBoundingClientRect();
+            var anchorRect = anchor.getBoundingClientRect();
+            var line1Rect = line1.getBoundingClientRect();
+            var line2Rect = line2.getBoundingClientRect();
+            var imgWidth = img.getBoundingClientRect().width;
+
+            if (!blockRect.width || !imgWidth) return;
+
+            var overlap = anchorRect.width * ANCHOR_OVERLAP;
+            var pngInset = imgWidth * PNG_LEFT_INSET;
+            var left = anchorRect.right - blockRect.left - overlap - pngInset;
+            var top = (line1Rect.top + line2Rect.bottom) / 2 - blockRect.top;
+
+            img.style.left = Math.round(left) + 'px';
+            img.style.top = Math.round(top) + 'px';
+        }
+
+        function schedulePosition() {
+            window.requestAnimationFrame(positionSmiley);
+        }
+
+        if (img.complete) {
+            schedulePosition();
+        } else {
+            img.addEventListener('load', schedulePosition);
+        }
+
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(schedulePosition);
+        }
+
+        var resizeTimer;
+        window.addEventListener('resize', function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(schedulePosition, 100);
+        });
+
+        if (typeof ResizeObserver !== 'undefined') {
+            var observer = new ResizeObserver(schedulePosition);
+            observer.observe(block);
+            observer.observe(img);
+        }
     }
 
     window.FunkyGizmo = window.FunkyGizmo || {};
