@@ -21,9 +21,9 @@
         }
 
         window.alert(
-            '문의 전송 기능은 현재 준비 중입니다.\n\n' +
-            '아래 이메일로 문의해 주세요.\n' +
-            'funkkygizmo.mari@gmail.com'
+            window.FG_I18N
+                ? window.FG_I18N.t('contact.alert')
+                : '문의 전송 기능은 현재 준비 중입니다.\n\n아래 이메일로 문의해 주세요.\nfunkkygizmo.mari@gmail.com'
         );
         form.reset();
     });

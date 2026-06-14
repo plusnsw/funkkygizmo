@@ -85,19 +85,31 @@
         var PNG_LEFT_INSET = 0.16;
         var ANCHOR_OVERLAP = 0.33;
 
+        function getLang() {
+            return document.documentElement.lang === 'en' ? 'en' : 'ko';
+        }
+
         function positionSmiley() {
             var blockRect = block.getBoundingClientRect();
             var anchorRect = anchor.getBoundingClientRect();
             var line1Rect = line1.getBoundingClientRect();
             var line2Rect = line2.getBoundingClientRect();
             var imgWidth = img.getBoundingClientRect().width;
+            var lang = getLang();
 
             if (!blockRect.width || !imgWidth) return;
 
-            var overlap = anchorRect.width * ANCHOR_OVERLAP;
-            var pngInset = imgWidth * PNG_LEFT_INSET;
-            var left = anchorRect.right - blockRect.left - overlap - pngInset;
+            var left;
             var top = (line1Rect.top + line2Rect.bottom) / 2 - blockRect.top;
+
+            if (lang === 'en') {
+                // Hang off the end of "ics" only — keep "aesthet" readable.
+                left = anchorRect.left - blockRect.left - imgWidth * 0.04;
+            } else {
+                var overlap = anchorRect.width * ANCHOR_OVERLAP;
+                var pngInset = imgWidth * PNG_LEFT_INSET;
+                left = anchorRect.right - blockRect.left - overlap - pngInset;
+            }
 
             img.style.left = Math.round(left) + 'px';
             img.style.top = Math.round(top) + 'px';
@@ -127,6 +139,8 @@
             var observer = new ResizeObserver(schedulePosition);
             observer.observe(block);
             observer.observe(img);
+            observer.observe(line1);
+            observer.observe(line2);
         }
     }
 

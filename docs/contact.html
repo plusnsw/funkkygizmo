@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/about-figma.css">
     <link rel="stylesheet" href="css/contact-figma.css">
 </head>
-<body class="page-figma" data-page="contact">
+<body class="page-figma" data-page="contact" data-i18n-doc-title="meta.contact.title">
     <header class="site-header site-header--figma">
         <div class="header-inner header-inner--figma">
             <a href="index.html" class="logo" aria-label="FUNKKY GIZMO home">
@@ -24,13 +24,11 @@
                 <a href="contact.html" data-nav="contact">Contact</a>
             </nav>
             <div class="lang-nav" aria-label="Language">
-                <span class="lang-nav__item lang-nav__item--active">KOR</span>
+                <button type="button" class="lang-nav__item lang-nav__item--active" data-lang="ko">KOR</button>
                 <span class="lang-nav__sep" aria-hidden="true">|</span>
-                <span class="lang-nav__item">ENG</span>
-                <span class="lang-nav__sep" aria-hidden="true">|</span>
-                <span class="lang-nav__item">CHN</span>
+                <button type="button" class="lang-nav__item" data-lang="en">ENG</button>
             </div>
-            <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+            <button type="button" class="nav-toggle" id="navToggle" data-i18n-aria="nav.openMenu" aria-label="Open menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -42,8 +40,8 @@
                 <div class="contact-figma-intro">
                     <h1 id="contact-page-title" class="contact-figma-title">Contact</h1>
                     <p class="contact-figma-lead">
-                        <span class="contact-figma-lead-line">브랜드 협업, 제품 문의,</span>
-                        <span class="contact-figma-lead-line">파트너십 제안 등 언제든 편하게 연락 주세요.</span>
+                        <span class="contact-figma-lead-line" data-i18n="contact.lead1"></span>
+                        <span class="contact-figma-lead-line" data-i18n="contact.lead2"></span>
                     </p>
                     <div class="about-figma-visual">
                         <img src="images/about_top1.png" alt="FUNKKY GIZMO character giving a thumbs up" width="590" height="632">
@@ -76,11 +74,8 @@
                             <label for="contactMessage">Message <span class="required" aria-hidden="true">*</span></label>
                             <textarea id="contactMessage" name="message" placeholder="please describe your project, goals, ideas, or any specific requests." required></textarea>
                         </div>
-                        <button type="submit" class="contact-figma-submit">문의하기</button>
-                        <p class="contact-figma-form-note">
-                            Your information is safe with us. We will contact you within 1-3 business days.<br>
-                            긴급 문의: <a href="mailto:funkkygizmo.mari@gmail.com">funkkygizmo.mari@gmail.com</a>
-                        </p>
+                        <button type="submit" class="contact-figma-submit" data-i18n="contact.submit">Send Inquiry</button>
+                        <p class="contact-figma-form-note" data-i18n-html="contact.note"></p>
                     </form>
                 </div>
             </div>
@@ -95,8 +90,8 @@
                         <img src="images/logo_b.png" alt="FUNKKY GIZMO" width="120" height="82">
                     </a>
                     <p class="figma-footer-tagline">
-                        <span class="figma-footer-tagline-line">아트와 오브제를 연결하는</span>
-                        <span class="figma-footer-tagline-line">크리에이티브 파트너</span>
+                        <span class="figma-footer-tagline-line" data-i18n="footer.tagline1"></span>
+                        <span class="figma-footer-tagline-line" data-i18n="footer.tagline2"></span>
                     </p>
                 </div>
                 <span class="figma-footer-divider" aria-hidden="true"></span>
@@ -117,6 +112,7 @@
     </footer>
 
     <script src="js/config.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
     <script src="js/contact-static.js"></script>
 </body>

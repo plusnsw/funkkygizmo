@@ -108,8 +108,27 @@
     opacity: 0.45;
 }
 
+.page-figma {
+    opacity: 1;
+    transition: opacity 0.12s ease;
+}
+
+html:not(.i18n-ready) body.page-figma {
+    opacity: 0;
+}
+
 .page-figma .lang-nav__item {
     opacity: 0.45;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+}
+
+.page-figma button.lang-nav__item {
+    appearance: none;
 }
 
 .page-figma .lang-nav__item--active {
@@ -960,6 +979,14 @@
 .about-figma-products-lead-line {
     display: block;
     white-space: nowrap;
+}
+
+html[lang="en"] .about-figma-products-lead {
+    font-family: 'Inter', sans-serif;
+}
+
+html[lang="en"] .about-figma-product-img--1 {
+    width: clamp(180px, 26vw, 340px);
 }
 
 .about-figma-products-cta {
