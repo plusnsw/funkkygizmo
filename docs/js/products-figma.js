@@ -9,6 +9,19 @@
     var openTriggers = document.querySelectorAll('[data-product-modal]');
     var closeTriggers = modal.querySelectorAll('[data-modal-close]');
     var lastFocus = null;
+    var scrollLockY = 0;
+
+    function lockBodyScroll() {
+        scrollLockY = window.scrollY || window.pageYOffset || 0;
+        document.body.style.top = scrollLockY ? '-' + scrollLockY + 'px' : '';
+        document.body.classList.add('products-modal-open');
+    }
+
+    function unlockBodyScroll() {
+        document.body.classList.remove('products-modal-open');
+        document.body.style.top = '';
+        window.scrollTo(0, scrollLockY);
+    }
 
     function resetPanelScroll(panel) {
         if (!panel) return;
@@ -40,7 +53,7 @@
 
         modal.hidden = false;
         modal.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('products-modal-open');
+        lockBodyScroll();
 
         resetPanelScroll(activePanel);
         requestAnimationFrame(function () {
@@ -56,7 +69,7 @@
 
         modal.hidden = true;
         modal.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('products-modal-open');
+        unlockBodyScroll();
 
         panelEls.forEach(function (panel) {
             panel.hidden = true;

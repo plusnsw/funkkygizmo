@@ -41,11 +41,18 @@
             'products.card.making': '지속 가능한 제작 방식',
             'products.card.use': '오래 사용되는 형태와 소재 설계',
             'products.card.package': '낭비를 줄이는 패키지 구성',
+            'products.closing.line1': '정해진 규격, 제한된 소재...',
+            'products.closing.line2': '기존의 굿즈 제작 방식은 작가의 철학을 담아내기에 <span class="products-figma-closing-keep">너무나 좁은 틀입니다.</span>',
+            'products.closing.line3': '펑키기즈모는 작품을 가장 잘 드러낼 수 있는',
+            'products.closing.line4': '최적의 제품 기획과 제작 서비스를 제공합니다.',
             'products.modal.1.title': '전시·행사 굿즈',
             'products.modal.2.title': '디자이너 커스텀 굿즈',
             'products.modal.3.title': '브랜드 프로모션 굿즈',
+            'products.tap1.label': '전시 · 행사 굿즈',
             'products.tap1.alt': '01 Exhibition and Event Goods — 전시·행사 굿즈',
+            'products.tap2.label': '디자이너 커스텀 굿즈',
             'products.tap2.alt': '02 Customized Goods for Designer — 디자이너 커스텀 굿즈',
+            'products.tap3.label': '브랜드 프로모션 굿즈',
             'products.tap3.alt': '03 Promotion Goods for Brand — 브랜드 프로모션 굿즈',
             'products.modal.close': '닫기',
             'modal1.t1': '전시 이미지를 입체적으로 담은 굿즈',
@@ -127,11 +134,18 @@
             'products.card.making': 'Sustainable production methods',
             'products.card.use': 'Forms and materials designed for long-term use',
             'products.card.package': 'Packaging that reduces waste',
+            'products.closing.line1': 'Fixed standards, limited materials...',
+            'products.closing.line2': 'Traditional goods production is too narrow a framework to <span class="products-figma-closing-keep">truly capture an artist\'s philosophy.</span>',
+            'products.closing.line3': 'FUNKKY GIZMO provides optimal',
+            'products.closing.line4': 'product planning and production services that best showcase your work.',
             'products.modal.1.title': 'Exhibition & Event Goods',
             'products.modal.2.title': 'Designer Custom Goods',
             'products.modal.3.title': 'Brand Promotion Goods',
+            'products.tap1.label': 'Exhibition & Event Goods',
             'products.tap1.alt': '01 Exhibition and Event Goods',
+            'products.tap2.label': 'Designer Custom Goods',
             'products.tap2.alt': '02 Customized Goods for Designer',
+            'products.tap3.label': 'Brand Promotion Goods',
             'products.tap3.alt': '03 Promotion Goods for Brand',
             'products.modal.close': 'Close',
             'modal1.t1': 'Goods that capture exhibition imagery in depth',
@@ -190,21 +204,6 @@
         return table[key] || messages[DEFAULT_LANG][key] || key;
     }
 
-    function getAboutHomeHref() {
-        var link = document.querySelector('.main-nav--figma a[data-nav="about"]');
-        return link ? link.getAttribute('href') : 'index.html';
-    }
-
-    function isAboutHome() {
-        var pageId = document.body.getAttribute('data-page') || '';
-        if (pageId === 'about') return true;
-        var path = window.location.pathname;
-        if (path === '/' || /\/index\.html$/.test(path)) {
-            return !path.includes('/products/') && !path.includes('/contact');
-        }
-        return false;
-    }
-
     function setActiveLangButton(lang) {
         document.querySelectorAll('.lang-nav__item[data-lang]').forEach(function (btn) {
             btn.classList.toggle('lang-nav__item--active', btn.getAttribute('data-lang') === lang);
@@ -260,15 +259,8 @@
     function switchLang(lang) {
         if (lang !== 'ko' && lang !== 'en') return;
 
-        var current = getLang();
         localStorage.setItem(STORAGE_KEY, lang);
-
-        if (current === lang && isAboutHome()) {
-            applyTranslations();
-            return;
-        }
-
-        window.location.href = getAboutHomeHref();
+        applyTranslations();
     }
 
     function initLangNav() {

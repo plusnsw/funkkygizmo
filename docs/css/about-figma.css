@@ -642,7 +642,7 @@ html:not(.i18n-ready) body.page-figma {
 
     .about-figma-panel .container {
         max-width: 100%;
-        padding: 0 0.25rem;
+        padding: 0 1rem;
     }
 
     .about-figma-row {
@@ -906,20 +906,76 @@ html:not(.i18n-ready) body.page-figma {
         font-size: 14px;
         line-height: 18px;
     }
-
-    .about-figma-team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 900px) {
     .about-figma-studios-lead {
-        font-size: 18px;
-        line-height: 28px;
+        font-size: clamp(14px, 3.6vw, 18px);
+        line-height: 1.45;
+        max-width: 100%;
+    }
+
+    .about-figma-panel .container {
+        padding: 0 1rem;
+    }
+
+    .about-figma-studios .container {
+        padding: 0 1rem;
+        overflow: hidden;
+    }
+
+    .about-figma-studios-copy {
+        padding: 0 0 1.25rem;
+    }
+
+    .about-figma-map-stage {
+        overflow: hidden;
+    }
+
+    .about-figma-map-wrap {
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .about-figma-map-vector {
+        left: 62%;
+        width: 10%;
+    }
+
+    .about-figma-map-label--kr {
+        left: auto;
+        right: 0;
+        top: 22%;
+        width: auto;
+        max-width: 36%;
+    }
+
+    .about-figma-map-label--cn {
+        left: auto;
+        right: 0;
+        top: 48%;
+        width: auto;
+        max-width: 36%;
+    }
+
+    .about-figma-map-label strong {
+        font-size: clamp(9px, 2.6vw, 16px);
+        line-height: 1.2;
+        white-space: normal;
+    }
+
+    .about-figma-map-label span {
+        font-size: clamp(8px, 2.3vw, 14px);
+        line-height: 1.2;
+        white-space: normal;
     }
 
     .about-figma-team-grid {
-        grid-template-columns: 1fr;
+        display: none;
+    }
+
+    .about-figma-studios-top {
+        margin-bottom: 0;
     }
 }
 
@@ -1202,10 +1258,6 @@ html[lang="en"] .about-figma-product-img--1 {
 
 
 @media (max-width: 1024px) {
-    .about-figma-team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .about-figma-products-copy {
         max-width: 52%;
     }
@@ -1346,9 +1398,59 @@ html[lang="en"] .about-figma-product-img--1 {
     }
 
     .about-figma-hero-inner,
-    .about-figma-diagram,
     .about-figma-row {
         grid-template-columns: 1fr;
+    }
+
+    .about-figma-diagram {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1fr);
+        gap: clamp(0.35rem, 2vw, 1rem);
+        align-items: center;
+    }
+
+    .about-figma-bridge {
+        padding: 2.5rem 0 2rem;
+    }
+
+    .about-figma-bridge .container {
+        padding: 0 0.75rem;
+    }
+
+    .about-figma-section-title {
+        margin-bottom: 1.5rem;
+        font-size: clamp(1rem, 4.5vw, 1.75rem);
+    }
+
+    .about-figma-circle {
+        width: clamp(72px, 22vw, 120px);
+        height: clamp(72px, 22vw, 120px);
+        margin: 0 auto 0.5rem;
+        font-size: clamp(0.55rem, 2.8vw, 0.875rem);
+    }
+
+    .about-figma-node-desc {
+        font-size: clamp(8px, 2.4vw, 14px);
+        line-height: 1.25;
+    }
+
+    .about-figma-connector {
+        padding: 0 0.15rem;
+    }
+
+    .about-figma-connector-top {
+        font-size: clamp(7px, 2.2vw, 13px);
+        margin-bottom: 0.35rem;
+        line-height: 1.2;
+    }
+
+    .about-figma-connector-bottom {
+        font-size: clamp(6px, 1.8vw, 10px);
+        margin-top: 0.35rem;
+        line-height: 1.2;
+    }
+
+    .about-figma-connector-line {
+        border-top-width: 1px;
     }
 
     .about-figma-visual {
@@ -1369,15 +1471,6 @@ html[lang="en"] .about-figma-product-img--1 {
         object-position: center top;
         transform: scale(1.45);
         transform-origin: center top;
-    }
-
-    .about-figma-connector {
-        order: 2;
-        padding: 1rem 0;
-    }
-
-    .about-figma-team-grid {
-        grid-template-columns: 1fr;
     }
 
 }
