@@ -6,10 +6,11 @@
     <title>About | FUNKKY GIZMO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/about-figma.css">
+    <link rel="stylesheet" href="css/about-figma.css?v=21">
 </head>
 <body class="page-figma" data-page="about" data-i18n-doc-title="meta.about.title">
     <header class="site-header site-header--figma">
@@ -40,11 +41,15 @@
                     <h1 id="hero-title" class="about-figma-title">
                         <span class="title-row title-row-1">the bridge</span>
                         <span class="title-row title-row-2">between</span>
-                        <span class="title-row title-row-3">
-                            <span class="w-blue">art</span><span class="w-black">and</span><span class="w-blue">object</span>
-                        </span>
+                        <span class="title-row title-row-3 w-blue">art and object</span>
                     </h1>
-                    <p class="about-figma-lead" data-i18n-html="about.hero.lead"></p>
+                    <p class="about-figma-hero-sub">
+                        <span class="about-figma-text-line" data-i18n="about.hero.sub"></span>
+                    </p>
+                    <p class="about-figma-lead">
+                        <span class="about-figma-text-line" data-i18n="about.hero.lead1"></span>
+                        <span class="about-figma-text-line" data-i18n="about.hero.lead2"></span>
+                    </p>
                     <div class="about-figma-actions">
                         <a href="products/index.html" class="btn-figma btn-figma-primary" data-i18n="about.hero.btn.product">View Product</a>
                         <a href="contact.html" class="btn-figma btn-figma-outline" data-i18n="about.hero.btn.contact">Contact Us</a>
@@ -60,22 +65,30 @@
             <div class="container">
                 <h2 id="bridge-title" class="about-figma-section-title">
                     <span class="dot" aria-hidden="true"></span>
-                    where art meets object
+                    <span data-i18n="about.bridge.title">from idea to objects</span>
                     <span class="dot" aria-hidden="true"></span>
                 </h2>
                 <div class="about-figma-diagram">
                     <div class="about-figma-node">
                         <div class="about-figma-circle about-figma-circle--funkky">FUNKKY</div>
-                        <p class="about-figma-node-desc" data-i18n-html="about.node.funkky"></p>
+                        <p class="about-figma-node-desc">
+                            <span class="about-figma-text-line" data-i18n="about.node.funkky.line1"></span>
+                            <span class="about-figma-text-line" data-i18n="about.node.funkky.line2"></span>
+                        </p>
                     </div>
                     <div class="about-figma-connector">
-                        <p class="about-figma-connector-top" data-i18n="about.connector.top"></p>
+                        <p class="about-figma-connector-top">
+                            <span class="about-figma-text-line" data-i18n="about.connector.top"></span>
+                        </p>
                         <hr class="about-figma-connector-line" aria-hidden="true">
-                        <p class="about-figma-connector-bottom">we connect artistic imagination<br>and technical realization</p>
+                        <p class="about-figma-connector-bottom" data-i18n="about.connector.bottom"></p>
                     </div>
                     <div class="about-figma-node">
                         <div class="about-figma-circle about-figma-circle--gizmo">GIZMO</div>
-                        <p class="about-figma-node-desc" data-i18n-html="about.node.gizmo"></p>
+                        <p class="about-figma-node-desc">
+                            <span class="about-figma-text-line" data-i18n="about.node.gizmo.line1"></span>
+                            <span class="about-figma-text-line" data-i18n="about.node.gizmo.line2"></span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -87,8 +100,15 @@
                     <div class="about-figma-row about-figma-row--who">
                         <h2 id="who-title" class="about-figma-row-title">WHO WE ARE</h2>
                         <div class="about-figma-row-body">
-                            <p data-i18n-html="about.who.p1"></p>
-                            <p data-i18n-html="about.who.p2"></p>
+                            <p class="about-figma-text-block">
+                                <span class="about-figma-text-line" data-i18n="about.who.p1.line1"></span>
+                                <span class="about-figma-text-line" data-i18n="about.who.p1.line2"></span>
+                            </p>
+                            <p class="about-figma-text-block">
+                                <span class="about-figma-text-line" data-i18n="about.who.p2.line1"></span>
+                                <span class="about-figma-text-line" data-i18n="about.who.p2.line2"></span>
+                                <span class="about-figma-text-line" data-i18n="about.who.p2.line3"></span>
+                            </p>
                         </div>
                     </div>
                     <div class="about-figma-divider" aria-hidden="true"></div>
@@ -97,19 +117,31 @@
                         <div class="about-figma-row-body">
                             <div class="about-figma-approach-item">
                                 <h3>CREATIVE DESIGN</h3>
-                                <p data-i18n-html="about.approach.creative"></p>
+                                <p>
+                                    <span class="about-figma-text-line" data-i18n="about.approach.creative.line1"></span>
+                                    <span class="about-figma-text-line" data-i18n="about.approach.creative.line2"></span>
+                                </p>
                             </div>
                             <div class="about-figma-approach-item">
                                 <h3>CUSTOM GOODS</h3>
-                                <p data-i18n="about.approach.custom"></p>
+                                <p>
+                                    <span class="about-figma-text-line" data-i18n="about.approach.custom"></span>
+                                </p>
                             </div>
                             <div class="about-figma-approach-item">
-                                <h3>RESPECT &amp; QUALITY</h3>
-                                <p data-i18n-html="about.approach.quality"></p>
+                                <h3>QUALITY &amp; DETAIL</h3>
+                                <p>
+                                    <span class="about-figma-text-line" data-i18n="about.approach.quality.line1"></span>
+                                    <span class="about-figma-text-line" data-i18n="about.approach.quality.line2"></span>
+                                </p>
                             </div>
                             <div class="about-figma-approach-item">
-                                <h3>SUSTAINABLE FUTURE</h3>
-                                <p data-i18n-html="about.approach.sustainable"></p>
+                                <h3>SUSTAINABLE PRODUCTION</h3>
+                                <p>
+                                    <span class="about-figma-text-line" data-i18n="about.approach.sustainable.line1"></span>
+                                    <span class="about-figma-text-line" data-i18n="about.approach.sustainable.line2"></span>
+                                    <span class="about-figma-text-line" data-i18n="about.approach.sustainable.line3"></span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -138,7 +170,11 @@
                                     <span class="about-figma-studios-title-line">GLOBAL</span>
                                     <span class="about-figma-studios-title-line">STUDIOS</span>
                                 </h2>
-                                <p class="about-figma-studios-lead" data-i18n="about.studios.lead"></p>
+                                <p class="about-figma-studios-lead">
+                                    <span class="about-figma-text-line" data-i18n="about.studios.line1"></span>
+                                    <span class="about-figma-text-line" data-i18n="about.studios.line2"></span>
+                                    <span class="about-figma-text-line" data-i18n="about.studios.line3"></span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -204,21 +240,22 @@
             <section class="about-figma-panel about-figma-products" aria-labelledby="products-title">
                 <div class="about-figma-products-inner">
                     <div class="about-figma-products-copy">
-                        <h2 id="products-title" class="about-figma-products-title">Products</h2>
-                        <div class="about-figma-products-lead-block">
-                            <p class="about-figma-products-lead">
-                                <span class="about-figma-products-lead-line" data-i18n="about.products.lead1"></span>
-                                <span class="about-figma-products-lead-line about-figma-products-lead-line--2" data-i18n-html="about.products.lead2"></span>
-                            </p>
-                            <img class="about-figma-product-img about-figma-product-img--1" src="images/product_1.png" alt="">
-                        </div>
+                        <h2 id="products-title" class="about-figma-products-title">PRODUCTS</h2>
+                        <p class="about-figma-products-lead">
+                            <span class="about-figma-products-lead-line" data-i18n="about.products.subtitle"></span>
+                        </p>
+                        <p class="about-figma-products-body">
+                            <span class="about-figma-text-line" data-i18n="about.products.body.line1"></span>
+                            <span class="about-figma-text-line" data-i18n="about.products.body.line2"></span>
+                        </p>
                         <div class="about-figma-products-cta">
-                            <a href="products/index.html" class="btn-figma btn-figma-product" data-i18n="about.products.btn">View Product</a>
+                            <a href="products/index.html" class="btn-figma btn-figma-product" data-i18n="about.products.btn">VIEW PRODUCT</a>
                         </div>
                     </div>
                     <div class="about-figma-products-stage" aria-hidden="true">
-                        <img class="about-figma-product-img about-figma-product-img--3" src="images/product_3.png" alt="">
+                        <img class="about-figma-product-img about-figma-product-img--1" src="images/product_1.png" alt="">
                         <img class="about-figma-product-img about-figma-product-img--2" src="images/product_2.png" alt="">
+                        <img class="about-figma-product-img about-figma-product-img--3" src="images/product_3.png" alt="">
                     </div>
                 </div>
             </section>
@@ -227,15 +264,20 @@
                 <section class="about-figma-cta" aria-labelledby="cta-eyebrow">
                     <div class="about-figma-cta-inner">
                         <div class="about-figma-cta-copy">
-                            <p id="cta-eyebrow" class="about-figma-cta-eyebrow">Go With Us</p>
+                            <p id="cta-eyebrow" class="about-figma-cta-eyebrow" data-i18n="about.cta.eyebrow">CREATE WITH US</p>
                             <h2 id="cta-title" class="about-figma-cta-title">
-                                <span data-i18n="about.cta.line1"></span>
-                                <span data-i18n="about.cta.line2"></span>
+                                <span class="about-figma-text-line" data-i18n="about.cta.title"></span>
                             </h2>
-                            <a href="contact.html" class="btn-figma btn-figma-light btn-figma-cta" data-i18n="about.cta.btn">Contact Us</a>
+                            <p class="about-figma-cta-body">
+                                <span class="about-figma-cta-body-line" data-i18n="about.cta.line1"></span>
+                                <span class="about-figma-cta-body-line" data-i18n="about.cta.line2"></span>
+                            </p>
+                            <a href="contact.html" class="btn-figma btn-figma-light btn-figma-cta" data-i18n="about.cta.btn">CONTACT US</a>
+                        </div>
+                        <div class="about-figma-cta-character-wrap" aria-hidden="true">
+                            <img class="about-figma-cta-character" src="images/withus_2.png" alt="">
                         </div>
                         <img class="about-figma-cta-logo" src="images/withus_1.png" alt="FUNKKY GIZMO">
-                        <img class="about-figma-cta-character" src="images/withus_2.png" alt="">
                     </div>
                 </section>
             </div>
@@ -251,6 +293,7 @@
                     <p class="about-figma-imagine-lead">
                         <span class="about-figma-imagine-lead-line" data-i18n="about.imagine.line1"></span>
                         <span class="about-figma-imagine-lead-line" data-i18n="about.imagine.line2"></span>
+                        <span class="about-figma-imagine-lead-line" data-i18n="about.imagine.line3"></span>
                     </p>
                     <img class="about-figma-imagine-icon about-figma-imagine-icon--right" src="images/bot_icon.png" alt="">
                 </div>
@@ -283,11 +326,11 @@
                     </div>
                 </nav>
             </div>
-            <p class="figma-footer-copy">Copyrights 2026 FUNKKY GIZMO All Rights Reserved</p>
+            <p class="figma-footer-copy">Copyrights 2024 FUNKKY GIZMO All Rights Reserved</p>
         </div>
     </footer>
 
-    <script src="js/i18n.js"></script>
+    <script src="js/i18n.js?v=8"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
